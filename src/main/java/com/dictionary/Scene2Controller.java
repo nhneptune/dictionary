@@ -1,4 +1,4 @@
-package com.example.dictionary;
+package com.dictionary;
 
 public class Scene2Controller {
 }

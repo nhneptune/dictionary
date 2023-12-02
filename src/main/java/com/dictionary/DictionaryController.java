@@ -1,4 +1,4 @@
-//package com.example.dictionary;
+//package com.dictionary;
 //
 //import javafx.event.ActionEvent;
 //import javafx.fxml.FXML;
