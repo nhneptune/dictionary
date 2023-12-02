@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="519.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.SearchController">
+   <children>
+      <TextField fx:id="searchTextField" layoutX="97.0" layoutY="29.0" prefHeight="35.0" prefWidth="647.0" />
+      <ListView fx:id="searchListView" layoutX="97.0" layoutY="64.0" prefHeight="200.0" prefWidth="647.0" />
+   </children>
+</AnchorPane>
