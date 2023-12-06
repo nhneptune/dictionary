@@ -8,20 +8,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.SearchController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.SearchController">
    <children>
-      <Button layoutX="26.0" layoutY="548.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="40.0" prefWidth="70.0" text="Back">
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="27.0" prefWidth="50.0" text="Back">
          <font>
-            <Font name="Bell MT" size="18.0" />
+            <Font size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="myTextField" layoutX="198.0" layoutY="50.0" onAction="#typeWord" onKeyTyped="#typeWord" prefHeight="36.0" prefWidth="153.0" AnchorPane.topAnchor="50.0" />
-      <ListView fx:id="myListView" layoutX="198.0" layoutY="80.0" prefHeight="482.0" prefWidth="150.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="200.0" />
-      <Label fx:id="myLabel" alignment="CENTER" layoutX="198.0" layoutY="14.0" prefHeight="35.0" prefWidth="153.0" text="Select a word" AnchorPane.topAnchor="15.0">
+      <TextField fx:id="wordTextField" layoutX="90.0" layoutY="50.0" onAction="#unshodListView" onKeyReleased="#typeWord" onKeyTyped="#typeWord" prefHeight="35.0" prefWidth="230.0" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="50.0" />
+      <ListView fx:id="wordListView" layoutX="90.0" layoutY="88.0" prefHeight="458.0" prefWidth="230.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="90.0" />
+      <Label fx:id="searchLabel" alignment="CENTER" layoutX="90.0" layoutY="10.0" prefHeight="36.0" prefWidth="230.0" text="Select a word" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <WebView fx:id="myWebview" layoutX="369.0" layoutY="51.0" prefHeight="512.0" prefWidth="633.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="369.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="51.0" />
+      <WebView fx:id="meaningWebview" layoutX="329.0" layoutY="50.0" prefHeight="500.0" prefWidth="550.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+      <Button fx:id="deleteButton" layoutX="826.0" layoutY="555.0" mnemonicParsing="false" onAction="#deleteWord" text="Delete" />
+      <Button fx:id="pronounceButton" layoutX="784.0" layoutY="555.0" mnemonicParsing="false" onAction="#deleteWord" prefHeight="27.0" prefWidth="32.0" text="🔊" />
    </children>
 </AnchorPane>

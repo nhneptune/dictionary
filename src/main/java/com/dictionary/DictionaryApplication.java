@@ -11,11 +11,6 @@ import java.io.IOException;
 public class DictionaryApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-//    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene1.fxml"));
-//    Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-//    stage.setTitle("Welcome!");
-//    stage.setScene(scene);
-//    stage.show();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Scene1.fxml"));
             Scene scene = new Scene(root);

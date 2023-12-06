@@ -2,14 +2,10 @@ package com.dictionary;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.beans.NamedArg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -29,45 +26,45 @@ public class SearchController implements Initializable {
   private Stage stage;
   private Scene scene;
   private Parent root;
-
   @FXML
-  private Label myLabel;
-
+  private Label searchLabel;
   @FXML
-  private TextField myTextField;
-
+  private Button backButton;
   @FXML
-  private ListView<Word> myListView = new ListView<>();
-
+  private Button deleteButton;
   @FXML
-  private WebView myWebview;
-
+  private TextField wordTextField;
+  @FXML
+  private ListView<Word> wordListView = new ListView<>();
+  @FXML
+  private WebView meaningWebview;
+  @FXML
+  private Button pronounceButton;
   private Word selectedWord;
 
-  private ObservableList<Word> words = FXCollections.observableArrayList();
+//  private ObservableList<Word> words = FXCollections.observableArrayList();
 
   @Override
   public void initialize(URL arg0, ResourceBundle arg1) {
-    myListView.setVisible(false);
-    myListView.getSelectionModel().selectedItemProperty().addListener(
+    wordListView.setVisible(false);
+    wordListView.getSelectionModel().selectedItemProperty().addListener(
         (observable, oldValue, newValue) -> {
-          System.out.println("fuck you");
-          myWebview.getEngine().loadContent(myListView.getSelectionModel().getSelectedItem().getHtml());
+          selectedWord = wordListView.getSelectionModel().getSelectedItem();
+          meaningWebview.getEngine().loadContent(selectedWord.getHtml());
         }
     );
   }
 
   public void switchToScene1(ActionEvent event) throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("Scene1.fxml"));
+    root = FXMLLoader.load(getClass().getResource("Scene1.fxml"));
     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
     stage.show();
-
   }
 
   public void switchToMenuScene(ActionEvent event) throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("MenuScene.fxml"));
+    root = FXMLLoader.load(getClass().getResource("MenuScene.fxml"));
     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     scene = new Scene(root);
     stage.setScene(scene);
@@ -75,17 +72,17 @@ public class SearchController implements Initializable {
   }
 
   public void typeWord() {
-    String word = myTextField.getText();
+    String word = wordTextField.getText();
     if (word.equals("")) {
-      myListView.setVisible(false);
-      myListView.getItems().clear();
+      wordListView.setVisible(false);
+      wordListView.getItems().clear();
     } else {
-      ResultSet rs = this.search();
-      myListView.setVisible(true);
-      myListView.getItems().clear();
+      ResultSet rs = QueryDatabase.getInstance().search(word);
+      wordListView.setVisible(true);
+      wordListView.getItems().clear();
       try {
         while (rs.next()) {
-          myListView.getItems().add(new Word(rs.getString("word"),
+          wordListView.getItems().add(new Word(rs.getString("word"),
               rs.getString("pronounce"), rs.getString("html")));
         }
       } catch (SQLException e) {
@@ -94,31 +91,14 @@ public class SearchController implements Initializable {
     }
   }
 
-  public Connection initConnection() {
-    String url = "jdbc:sqlite:C:\\Users\\admin\\IdeaProjects\\dictionary\\dict_hh.db";
-    Connection conn = null;
-    try {
-      conn = DriverManager.getConnection(url);
-      if (conn == null) {
-        System.out.println("Khong the ket noi toi database");
-      }
-    } catch (SQLException e) {
-      System.out.println(e.getMessage());
-    }
-    return conn;
+  public void deleteWord() {
+    QueryDatabase.getInstance().delete(selectedWord);
+    wordListView.getItems().remove(selectedWord);
   }
 
-  public ResultSet search() {
-    String sql =
-        "SELECT * FROM av WHERE word LIKE" + "'" + myTextField.getText() + "%'" + "LIMIT 1000";
-    try {
-      Connection conn = this.initConnection();
-      Statement stmt = conn.createStatement();
-      ResultSet rs = stmt.executeQuery(sql);
-      return rs;
-    } catch (SQLException e) {
-      System.out.println(e.getMessage());
+  public void unshodListView() {
+    if (!wordTextField.isFocused()) {
+      wordListView.setVisible(false);
     }
-    return null;
   }
 }

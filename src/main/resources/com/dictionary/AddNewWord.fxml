@@ -7,12 +7,13 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.AddNewWordController">
    <children>
-      <Button layoutX="51.0" layoutY="523.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="116.0" text="BACK" />
-      <TextField layoutX="425.0" layoutY="211.0" />
-      <TextField layoutX="425.0" layoutY="130.0" />
-      <TextField layoutX="425.0" layoutY="171.0" />
-      <Label layoutX="316.0" layoutY="135.0" text="Label" />
-      <Label layoutX="316.0" layoutY="176.0" text="Label" />
-      <Label layoutX="316.0" layoutY="211.0" text="Label" />
+      <Button fx:id="backButton" layoutX="51.0" layoutY="523.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="42.0" prefWidth="116.0" text="BACK" />
+      <TextField fx:id="descriptionTextField" layoutX="259.0" layoutY="172.0" prefHeight="237.0" prefWidth="516.0" />
+      <TextField fx:id="wordTextField" layoutX="259.0" layoutY="91.0" prefHeight="30.0" prefWidth="516.0" />
+      <TextField fx:id="pronounceTextField" layoutX="259.0" layoutY="132.0" prefHeight="30.0" prefWidth="516.0" />
+      <Label fx:id="wordLabel" layoutX="150.0" layoutY="96.0" text="Word" />
+      <Label fx:id="pronounceLabel" layoutX="150.0" layoutY="137.0" text="Pronounce" />
+      <Label fx:id="descriptionLabel" layoutX="150.0" layoutY="177.0" text="Description" />
+      <Button fx:id="addButton" layoutX="731.0" layoutY="425.0" mnemonicParsing="false" onAction="#addWord" text="Add" />
    </children>
 </AnchorPane>
