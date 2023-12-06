@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.util.List;
@@ -27,9 +28,12 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 
 public class SceneController implements Initializable {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+    protected Stage stage;
+    protected Scene scene;
+    protected Parent root;
+
+    @FXML
+    protected AnchorPane rootAnchor;
 
     @FXML
     private Label welcomeText;
@@ -60,7 +64,6 @@ public class SceneController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     public void switchToScene2(ActionEvent event) throws IOException {
