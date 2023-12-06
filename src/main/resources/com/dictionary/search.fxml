@@ -24,6 +24,6 @@
       </Label>
       <WebView fx:id="meaningWebview" layoutX="329.0" layoutY="50.0" prefHeight="500.0" prefWidth="550.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
       <Button fx:id="deleteButton" layoutX="826.0" layoutY="555.0" mnemonicParsing="false" onAction="#deleteWord" text="Delete" />
-      <Button fx:id="pronounceButton" layoutX="784.0" layoutY="555.0" mnemonicParsing="false" onAction="#deleteWord" prefHeight="27.0" prefWidth="32.0" text="🔊" />
+      <Button fx:id="pronounceButton" layoutX="784.0" layoutY="555.0" mnemonicParsing="false" onAction="#pronounce" prefHeight="27.0" prefWidth="32.0" text="🔊" />
    </children>
 </AnchorPane>

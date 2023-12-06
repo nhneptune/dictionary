@@ -5,7 +5,6 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import javafx.beans.NamedArg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +18,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.web.WebView;
-
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 
 public class SearchController implements Initializable {
 
@@ -41,8 +41,6 @@ public class SearchController implements Initializable {
   @FXML
   private Button pronounceButton;
   private Word selectedWord;
-
-//  private ObservableList<Word> words = FXCollections.observableArrayList();
 
   @Override
   public void initialize(URL arg0, ResourceBundle arg1) {
@@ -99,6 +97,28 @@ public class SearchController implements Initializable {
   public void unshodListView() {
     if (!wordTextField.isFocused()) {
       wordListView.setVisible(false);
+    }
+  }
+
+  public void pronounce() {
+    System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us"
+        + ".cmu_us_kal.KevinVoiceDirectory");
+    Voice voice = VoiceManager.getInstance().getVoice("kevin16");
+    Voice[] voices = VoiceManager.getInstance().getVoices();
+    for (int i = 0; i < voices.length; i++) {
+      System.out.println("# Voices: " + voices[i].getName());
+    }
+    if (voice != null)
+    {
+      voice.allocate();
+      System.out.println("Voice rate: " + voice.getRate());
+      System.out.println("Voice pitch: " + voice.getPitch());
+      System.out.println("Voice volume: " + voice.getVolume());
+      boolean status = voice.speak(selectedWord.getWord());
+      System.out.println("Status: " + status);
+      voice.deallocate();
+    } else {
+      System.err.println("error something");
     }
   }
 }
