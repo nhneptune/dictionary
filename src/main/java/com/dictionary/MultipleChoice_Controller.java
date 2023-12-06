@@ -39,14 +39,21 @@ public class MultipleChoice_Controller extends SceneController {
         if (numberOfQuestionsUsed == multipleChoice.getNumberOfQuestions()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ResultScene.fxml"));
             root = loader.load();
+
             MultipleChoiceEnd_Controller multipleChoiceEnd_controller = loader.getController();
             multipleChoiceEnd_controller.displayScore(multipleChoice.getScore(), multipleChoice.getNumberOfQuestions());
+
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
             return;
         }
+
+        if (multipleChoice.getScore() == 0) {
+            scorePlace.setText("Score: 0");
+        }
+
         QuestionsInGame currentQuestions = multipleChoice.returnRandomQuestions();
         questionPlace.setText(currentQuestions.getQuestions());
         button_A.setText(currentQuestions.getAnswer_A());
@@ -62,7 +69,7 @@ public class MultipleChoice_Controller extends SceneController {
     public void correct() {
         resultPlace.setText("Well done!");
         multipleChoice.increaseScoreGame();
-        scorePlace.setText(multipleChoice.getScore() + "");
+        scorePlace.setText("Score: " + multipleChoice.getScore());
     }
 
     @FXML
@@ -101,10 +108,10 @@ public class MultipleChoice_Controller extends SceneController {
         }
     }
 
-    /** Đưa về scene ban đầu của game. */
+    /** Đưa về Menu Scene. */
     @FXML
-    public void switchToGameScene(ActionEvent e) throws  IOException {
-        FXMLLoader gameScene = new FXMLLoader(getClass().getResource("gameScene.fxml"));
+    public void switchToMenuScene(ActionEvent e) throws  IOException {
+        FXMLLoader gameScene = new FXMLLoader(getClass().getResource("MenuScene.fxml"));
         root = gameScene.load();
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         scene = new Scene(root);

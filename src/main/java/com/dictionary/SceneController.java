@@ -18,8 +18,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -66,8 +68,29 @@ public class SceneController implements Initializable {
         stage.show();
     }
 
-    public void switchToScene2(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
+    public void switchToMenuScene(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("MenuScene.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToSearchController(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("search.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToMultipleChoice_Controller(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AnswerTheQuestions.fxml"));
+        root = loader.load();
+
+        MultipleChoice_Controller multipleChoice_controller = loader.getController();
+        multipleChoice_controller.setQuestion(event);
+
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

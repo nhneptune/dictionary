@@ -5,31 +5,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.MultipleChoiceEnd_Controller">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.MultipleChoiceEnd_Controller">
    <children>
-      <Label layoutX="57.0" layoutY="170.0" prefHeight="34.0" prefWidth="162.0" text="Congratulation!">
-         <font>
-            <Font name="Bell MT" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="scorePlace" layoutX="17.0" layoutY="237.0" prefHeight="34.0" prefWidth="866.0">
+      <Label fx:id="scorePlace" layoutX="63.0" layoutY="154.0" prefHeight="34.0" prefWidth="866.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="294.0" layoutY="42.0" prefHeight="94.0" prefWidth="311.0" text="GAME OVER">
+      <Label alignment="CENTER" layoutY="42.0" prefHeight="94.0" prefWidth="1000.0" text="RESULT">
          <font>
             <Font name="Broadway" size="48.0" />
          </font>
       </Label>
-      <Button layoutX="402.0" layoutY="384.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="34.0" prefWidth="94.0" text="PLay again">
+      <Button layoutX="440.0" layoutY="338.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="40.0" prefWidth="110.0" text="PLay again">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="37.0" layoutY="540.0" mnemonicParsing="false" onAction="#switchToGameScene" prefHeight="34.0" prefWidth="66.0" text="Back">
+      <Button layoutX="37.0" layoutY="540.0" mnemonicParsing="false" onAction="#switchToGameScene" prefHeight="40.0" prefWidth="70.0" text="Back">
          <font>
-            <Font name="Bell MT" size="14.0" />
+            <Font name="Bell MT" size="18.0" />
          </font>
       </Button>
    </children>

@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.MultipleChoice_Controller">
    <children>
       <GridPane layoutX="50.0" layoutY="416.0" prefHeight="100.0" prefWidth="800.0">
@@ -44,20 +43,30 @@
             </Button>
          </children>
       </GridPane>
-      <Label fx:id="questionPlace" layoutX="-2.0" layoutY="100.0" prefHeight="44.0" prefWidth="900.0">
+      <Label fx:id="questionPlace" layoutX="32.0" layoutY="100.0" prefHeight="44.0" prefWidth="866.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="83.0" layoutY="24.0" prefHeight="30.0" prefWidth="78.0" text="Score:">
+      <Label fx:id="scorePlace" layoutX="83.0" layoutY="24.0" prefHeight="30.0" prefWidth="78.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" layoutX="798.0" layoutY="536.0" mnemonicParsing="false" onAction="#setQuestion" prefHeight="38.0" prefWidth="69.0" text="Next">
+      <Button alignment="CENTER" layoutX="798.0" layoutY="536.0" mnemonicParsing="false" onAction="#setQuestion" prefHeight="40.0" prefWidth="70.0" text="Next">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Button>
+      <Button layoutX="27.0" layoutY="535.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="40.0" prefWidth="70.0" text="Back">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="resultPlace" layoutX="83.0" layoutY="206.0" prefHeight="43.0" prefWidth="173.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

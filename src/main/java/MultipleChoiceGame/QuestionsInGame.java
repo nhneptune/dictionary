@@ -10,6 +10,7 @@ public class QuestionsInGame {
     private boolean isSelectedAnswer;
 
     public QuestionsInGame(String questions, String answer_A, String answer_B, String answer_C, String answer_D, String correctedAnswer) {
+        this.questions = questions;
         this.answer_A = answer_A;
         this.answer_B = answer_B;
         this.answer_C = answer_C;
