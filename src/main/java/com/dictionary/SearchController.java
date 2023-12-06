@@ -74,7 +74,6 @@ public class SearchController implements Initializable {
     stage.show();
   }
 
-
   public void typeWord() {
     String word = myTextField.getText();
     if (word.equals("")) {
@@ -86,8 +85,8 @@ public class SearchController implements Initializable {
       myListView.getItems().clear();
       try {
         while (rs.next()) {
-          myListView.getItems()
-              .add(new Word(rs.getString("word"), rs.getString("pronounce"), rs.getString("html")));
+          myListView.getItems().add(new Word(rs.getString("word"),
+              rs.getString("pronounce"), rs.getString("html")));
         }
       } catch (SQLException e) {
         throw new RuntimeException(e);
@@ -111,7 +110,7 @@ public class SearchController implements Initializable {
 
   public ResultSet search() {
     String sql =
-        "SELECT * FROM av WHERE word LIKE" + "'" + myTextField.getText() + "%'" + "LIMIT 10";
+        "SELECT * FROM av WHERE word LIKE" + "'" + myTextField.getText() + "%'" + "LIMIT 1000";
     try {
       Connection conn = this.initConnection();
       Statement stmt = conn.createStatement();
@@ -122,25 +121,4 @@ public class SearchController implements Initializable {
     }
     return null;
   }
-
-  public void showSearchResult() {
-    String sql = "SELECT * FROM av WHERE word = " + "'" + selectedWord + "'";
-    try {
-      Connection conn = this.initConnection();
-      Statement stmt = conn.createStatement();
-      ResultSet rs = stmt.executeQuery(sql);
-      while (rs.next()) {
-
-      }
-    } catch (SQLException e) {
-      System.out.println(e.getMessage());
-    }
-  }
-
-//  public void selectWord(MouseEvent mouseEvent) {
-//    selectedWord = myListView.getFocusModel().getFocusedItem();
-//    myTextField.setText(selectedWord);
-//    myListView.setVisible(false);
-//    myListView.getItems().clear();
-//  }
 }
