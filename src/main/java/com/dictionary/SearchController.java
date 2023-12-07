@@ -118,7 +118,7 @@ public class SearchController implements Initializable {
       System.out.println("Status: " + status);
       voice.deallocate();
     } else {
-      System.err.println("error something");
+      System.err.println("Pronounce error!");
     }
   }
 }
