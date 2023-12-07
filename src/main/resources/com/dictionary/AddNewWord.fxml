@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.AddNewWordController">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@Scene1.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.AddNewWordController">
    <children>
       <Button fx:id="backButton" layoutX="14.0" layoutY="549.0" mnemonicParsing="false" onAction="#backToMenuScene" prefHeight="40.0" prefWidth="70.0" text="Back">
          <font>

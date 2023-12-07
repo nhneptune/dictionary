@@ -1,3 +1,28 @@
 .root{
-    -fx-background-color: "pink";
+    -fx-background-color: #D2E9E9;
+    -main-color: #F8F6F4;
+    -text-color: #C4DFDF;
+    -focus-color: #E3F4F4;
+}
+
+.button{
+ -fx-background-color: -main-color;
+}
+
+.button:hover {
+  -fx-background-color: -focus-color;
+}
+
+.label{
+ -fx-text-fill: "black";
+}
+
+#startButton{
+ -fx-border-color: "black";
+    -fx-background-radius: 25;
+    -fx-border-radius: 25;
+}
+
+#appLabel {
+  -fx-font-family: Open Sans;
 }
