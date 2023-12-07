@@ -17,6 +17,28 @@
  -fx-text-fill: "black";
 }
 
+.text-field{
+ -fx-accent: -main-color;
+  -fx-background-color: -focus-color, white;
+}
+
+.text-field:focused{
+ -fx-background-color: -main-color, white;
+  -fx-border-color: -fx-accent;
+}
+
+.list-view{
+ -fx-background-color: -focus-color;
+  -fx-background-radius: 10;
+  -fx-border-radius: 5;
+}
+
+.web-view{
+ -fx-background-color: -focus-color;
+  -fx-background-radius: 10;
+  -fx-border-radius: 5;
+}
+
 #startButton{
  -fx-border-color: "black";
     -fx-background-radius: 25;
