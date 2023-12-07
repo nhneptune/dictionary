@@ -21,15 +21,13 @@ import javafx.scene.web.WebView;
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 
-public class SearchController implements Initializable {
+public class SearchController extends FunctionController implements Initializable {
 
   private Stage stage;
   private Scene scene;
   private Parent root;
   @FXML
   private Label searchLabel;
-  @FXML
-  private Button backButton;
   @FXML
   private Button deleteButton;
   @FXML
@@ -51,14 +49,6 @@ public class SearchController implements Initializable {
           meaningWebview.getEngine().loadContent(selectedWord.getHtml());
         }
     );
-  }
-
-  public void switchToMenuScene(ActionEvent event) throws IOException {
-    root = FXMLLoader.load(getClass().getResource("MenuScene.fxml"));
-    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
   }
 
   public void typeWord() {
@@ -84,12 +74,6 @@ public class SearchController implements Initializable {
   public void deleteWord() {
     QueryDatabase.getInstance().delete(selectedWord);
     wordListView.getItems().remove(selectedWord);
-  }
-
-  public void unshodListView() {
-    if (!wordTextField.isFocused()) {
-      wordListView.setVisible(false);
-    }
   }
 
   public void pronounce() {

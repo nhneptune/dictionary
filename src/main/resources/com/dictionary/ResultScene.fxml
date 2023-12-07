@@ -22,7 +22,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="549.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="40.0" prefWidth="70.0" text="Back">
+      <Button fx:id="backButton" layoutX="14.0" layoutY="549.0" mnemonicParsing="false" onAction="#backToMenuScene" prefHeight="40.0" prefWidth="70.0" text="Back">
          <font>
             <Font name="Bell MT" size="18.0" />
          </font>

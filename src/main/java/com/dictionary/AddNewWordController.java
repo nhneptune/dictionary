@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class AddNewWordController {
+public class AddNewWordController extends FunctionController {
   @FXML
   private Label wordLabel;
   @FXML
@@ -25,18 +25,7 @@ public class AddNewWordController {
   private TextField descriptionTextField;
   @FXML
   private Button addButton;
-  @FXML
-  private Button backButton;
   private Word new_Word;
-
-  public void backToMenuScene() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("MenuScene.fxml"));
-    Stage stage = (Stage) backButton.getScene().getWindow();
-    Scene scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
-  }
-
   public void addWord() throws IOException {
     String word = wordTextField.getText();
     String pronounce = pronounceTextField.getText();

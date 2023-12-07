@@ -15,14 +15,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javax.net.ssl.HttpsURLConnection;
 
-public class APIController {
+public class APIController extends FunctionController {
   private Stage stage;
   private Scene scene;
   private Parent root;
   @FXML
   private Button translateButton;
-  @FXML
-  private Button backButton;
   @FXML
   private TextField inputTextField;
   @FXML
@@ -66,13 +64,5 @@ public class APIController {
       throw new RuntimeException(e);
     }
     HttpsURLConnection connection = null;
-  }
-
-  public void backToMenuScene() throws IOException {
-    root = FXMLLoader.load(getClass().getResource("MenuScene.fxml"));
-    stage = (Stage) backButton.getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
   }
 }

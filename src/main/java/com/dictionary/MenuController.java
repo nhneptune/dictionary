@@ -3,7 +3,6 @@ package com.dictionary;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,7 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class SceneController implements Initializable {
+public class MenuController implements Initializable {
     protected Stage stage;
     protected Scene scene;
     protected Parent root;
@@ -26,7 +25,7 @@ public class SceneController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         try {
-            searchScene = new Scene(FXMLLoader.load(getClass().getResource("search.fxml")));
+            searchScene = new Scene(FXMLLoader.load(getClass().getResource("SearchScene.fxml")));
             addNewWordScene = new Scene(FXMLLoader.load(getClass().getResource("AddNewWord.fxml")));
             apiTranslateScene = new Scene(FXMLLoader.load(getClass().getResource("APITranslate.fxml")));
         } catch (IOException e) {
@@ -35,7 +34,7 @@ public class SceneController implements Initializable {
     }
 
     public void switchToScene1(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Scene1.fxml"));
+        root = FXMLLoader.load(getClass().getResource("StartScene.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

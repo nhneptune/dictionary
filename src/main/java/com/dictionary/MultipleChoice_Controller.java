@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MultipleChoice_Controller extends SceneController {
+public class MultipleChoice_Controller extends FunctionController {
     private int numberOfQuestionsUsed = 0;
     private final MultipleChoice multipleChoice = MultipleChoice.getMultipleChoice();
     private String correctedAnswer;
@@ -106,16 +106,5 @@ public class MultipleChoice_Controller extends SceneController {
         } else {
             resultPlace.setText("Unlucky for you!");
         }
-    }
-
-    /** Đưa về Menu Scene. */
-    @FXML
-    public void switchToMenuScene(ActionEvent e) throws  IOException {
-        FXMLLoader gameScene = new FXMLLoader(getClass().getResource("MenuScene.fxml"));
-        root = gameScene.load();
-        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
     }
 }

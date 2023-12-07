@@ -12,19 +12,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MultipleChoiceEnd_Controller extends SceneController {
+public class MultipleChoiceEnd_Controller extends FunctionController {
     @FXML
     private Label scorePlace;
-
-    @FXML
-    public void switchToMenuScene(ActionEvent e) throws  IOException {
-        FXMLLoader gameScene = new FXMLLoader(getClass().getResource("MenuScene.fxml"));
-        root = gameScene.load();
-        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
     public void displayScore (int score, int numberOfQuestions) {
         String result = "Your score is " + score + " out of " + numberOfQuestions;
