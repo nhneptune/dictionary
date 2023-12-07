@@ -2,6 +2,7 @@ package com.dictionary;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -42,7 +43,8 @@ public class QueryDatabase {
   }
 
   public void add(Word new_Word) {
-    String sql = "INSERT INTO av VALUES ('" + new_Word.getWord() + "', '" + new_Word.getPronounce() + "', '" + new_Word.getDescription() + "')";
+    String sql = "INSERT INTO av (word, html, description, pronounce) VALUES ('" + new_Word.getWord() + "', '" + new_Word.getHtml()
+        + "', '" + new_Word.getDescription() + "', '" + new_Word.getPronounce() + "')";
     try {
       Statement stmt = connection.createStatement();
       stmt.executeUpdate(sql);

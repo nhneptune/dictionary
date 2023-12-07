@@ -4,7 +4,6 @@ public class Word {
   private String word;
   private String description;
   private String pronounce;
-
   private String html;
 
 

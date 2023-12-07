@@ -41,7 +41,8 @@ public class AddNewWordController {
     String word = wordTextField.getText();
     String pronounce = pronounceTextField.getText();
     String description = descriptionTextField.getText();
-    new_Word = new Word(word, pronounce, description);
+    String html = "<h1>" + word + "</h1><h3><i>/" + pronounce + "/</i></h3><ul><li>"+ description + "</li></ul>";
+    new_Word = new Word(word, description, pronounce, html);
     QueryDatabase.getInstance().add(new_Word);
   }
 }
