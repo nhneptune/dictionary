@@ -14,9 +14,9 @@
     </Button>
     <TextField fx:id="inputTextField" alignment="TOP_LEFT" layoutX="119.0" layoutY="57.0" prefHeight="459.0" prefWidth="365.0" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="57.0" />
       <TextField fx:id="outputTextField" alignment="TOP_LEFT" editable="false" layoutX="522.0" layoutY="59.0" prefHeight="459.0" prefWidth="365.0" />
-      <Button fx:id="translateButton" layoutX="729.0" layoutY="541.0" mnemonicParsing="false" onAction="#translate" prefHeight="39.0" prefWidth="136.0" text="Translate">
+      <Button fx:id="translateButton" layoutX="878.0" layoutY="548.0" mnemonicParsing="false" onAction="#translate" prefHeight="40.0" prefWidth="110.0" text="Translate">
          <font>
-            <Font size="13.0" />
+            <Font name="Bell MT" size="18.0" />
          </font>
       </Button>
   </children>
