@@ -68,7 +68,7 @@ public class APIController {
     HttpsURLConnection connection = null;
   }
 
-  public void backToMenu() throws IOException {
+  public void backToMenuScene() throws IOException {
     root = FXMLLoader.load(getClass().getResource("MenuScene.fxml"));
     stage = (Stage) backButton.getScene().getWindow();
     scene = new Scene(root);

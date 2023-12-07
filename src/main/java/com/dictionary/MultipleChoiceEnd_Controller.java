@@ -17,7 +17,7 @@ public class MultipleChoiceEnd_Controller extends SceneController {
     private Label scorePlace;
 
     @FXML
-    public void switchToGameScene(ActionEvent e) throws  IOException {
+    public void switchToMenuScene(ActionEvent e) throws  IOException {
         FXMLLoader gameScene = new FXMLLoader(getClass().getResource("MenuScene.fxml"));
         root = gameScene.load();
         stage = (Stage) ((Node) e.getSource()).getScene().getWindow();

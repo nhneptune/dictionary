@@ -29,7 +29,7 @@ public class AddNewWordController {
   private Button backButton;
   private Word new_Word;
 
-  public void backToMenu() throws IOException {
+  public void backToMenuScene() throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("MenuScene.fxml"));
     Stage stage = (Stage) backButton.getScene().getWindow();
     Scene scene = new Scene(root);

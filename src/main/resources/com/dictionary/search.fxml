@@ -8,11 +8,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.SearchController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.SearchController">
    <children>
-      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="27.0" prefWidth="50.0" text="Back">
+      <Button fx:id="backButton" layoutX="14.0" layoutY="549.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="40.0" prefWidth="70.0" text="Back">
          <font>
-            <Font size="13.0" />
+            <Font name="Bell MT" size="18.0" />
          </font>
       </Button>
       <TextField fx:id="wordTextField" layoutX="90.0" layoutY="50.0" onAction="#unshodListView" onKeyReleased="#typeWord" onKeyTyped="#typeWord" prefHeight="35.0" prefWidth="230.0" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="50.0" />

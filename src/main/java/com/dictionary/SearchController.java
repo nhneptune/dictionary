@@ -53,14 +53,6 @@ public class SearchController implements Initializable {
     );
   }
 
-  public void switchToScene1(ActionEvent event) throws IOException {
-    root = FXMLLoader.load(getClass().getResource("Scene1.fxml"));
-    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
-  }
-
   public void switchToMenuScene(ActionEvent event) throws IOException {
     root = FXMLLoader.load(getClass().getResource("MenuScene.fxml"));
     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
