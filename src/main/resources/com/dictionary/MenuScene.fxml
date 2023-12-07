@@ -27,7 +27,7 @@
             <Font name="Bell MT" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="33.0" layoutY="533.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="40.0" prefWidth="70.0" text="Back">
+      <Button layoutX="14.0" layoutY="549.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="40.0" prefWidth="70.0" text="Back">
          <font>
             <Font name="Bell MT" size="18.0" />
          </font>

@@ -7,13 +7,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dictionary.APIController">
   <children>
-    <Button fx:id="backButton" layoutX="21.0" layoutY="541.0" mnemonicParsing="false" onAction="#backToMenuScene" prefHeight="40.0" prefWidth="70.0" text="Back">
+    <Button fx:id="backButton" layoutX="14.0" layoutY="549.0" mnemonicParsing="false" onAction="#backToMenuScene" prefHeight="40.0" prefWidth="70.0" text="Back">
       <font>
         <Font name="Bell MT" size="18.0" />
       </font>
     </Button>
-    <TextField fx:id="inputTextField" alignment="TOP_LEFT" layoutX="64.0" layoutY="60.0" prefHeight="459.0" prefWidth="365.0" AnchorPane.leftAnchor="64.0" AnchorPane.topAnchor="60.0" />
-      <TextField fx:id="outputTextField" alignment="TOP_LEFT" editable="false" layoutX="468.0" layoutY="60.0" prefHeight="459.0" prefWidth="365.0" />
+    <TextField fx:id="inputTextField" alignment="TOP_LEFT" layoutX="119.0" layoutY="57.0" prefHeight="459.0" prefWidth="365.0" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="57.0" />
+      <TextField fx:id="outputTextField" alignment="TOP_LEFT" editable="false" layoutX="522.0" layoutY="59.0" prefHeight="459.0" prefWidth="365.0" />
       <Button fx:id="translateButton" layoutX="729.0" layoutY="541.0" mnemonicParsing="false" onAction="#translate" prefHeight="39.0" prefWidth="136.0" text="Translate">
          <font>
             <Font size="13.0" />
