@@ -53,12 +53,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" layoutX="904.0" layoutY="535.0" mnemonicParsing="false" onAction="#setQuestion" prefHeight="40.0" prefWidth="70.0" text="Next">
+      <Button alignment="CENTER" layoutX="918.0" layoutY="548.0" mnemonicParsing="false" onAction="#setQuestion" prefHeight="40.0" prefWidth="70.0" text="Next">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="27.0" layoutY="535.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="40.0" prefWidth="70.0" text="Back">
+      <Button layoutX="14.0" layoutY="549.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="40.0" prefWidth="70.0" text="Back">
          <font>
             <Font name="Bell MT" size="18.0" />
          </font>
